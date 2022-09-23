@@ -1,6 +1,6 @@
 import "./components/index.js";
 import data from "./dataPost.js";
-import MyPost, {Attribute} from "./components/PostInsta/PostInsta";
+import MyPost, {Attribute} from "./components/PostInsta/PostInsta.js";
 
 
 

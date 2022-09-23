@@ -1,6 +1,6 @@
 import "./components/index.js";
 import data from "./dataPost.js";
-import { Attribute } from "./components/PostInsta/PostInsta";
+import { Attribute } from "./components/PostInsta/PostInsta.js";
 class AppContainer extends HTMLElement {
     constructor() {
         super();
