@@ -1,24 +1,22 @@
-import data from "./data.js";
 import "./components/index.js";
-import { Attribute } from "./components/Profile/Profile.js";
+import data from "./dataPost.js";
+import { Attribute } from "./components/PostInsta/PostInsta";
 class AppContainer extends HTMLElement {
     constructor() {
         super();
-        this.counters = [];
-        this.profiles = [];
+        this.post = [];
         this.attachShadow({ mode: "open" });
-        const counter = this.ownerDocument.createElement("my-counter");
-        counter.button.addEventListener("click", () => {
-            console.log("button clicked");
-        });
-        this.counters.push(counter);
         data.forEach((user) => {
-            const profileCard = this.ownerDocument.createElement("my-profile");
-            profileCard.setAttribute(Attribute.name, user.name);
-            profileCard.setAttribute(Attribute.lastname, user.username);
-            profileCard.setAttribute(Attribute.age, String(user.id));
-            profileCard.addEventListener("click", () => console.log(user.name));
-            this.profiles.push(profileCard);
+            const postCard = this.ownerDocument.createElement("my-post");
+            postCard.setAttribute(Attribute.nameprofile, user.nameprofile);
+            postCard.setAttribute(Attribute.likeImg, user.likeImg);
+            postCard.setAttribute(Attribute.profileImg, user.profileImg);
+            postCard.setAttribute(Attribute.kimImg, user.kimImg);
+            postCard.setAttribute(Attribute.commentImg, user.commentImg);
+            postCard.setAttribute(Attribute.sendImg, user.sendImg);
+            postCard.setAttribute(Attribute.comments, user.comments);
+            postCard.setAttribute(Attribute.comments, user.viewers);
+            this.post.push(postCard);
         });
     }
     connectedCallback() {
@@ -26,14 +24,13 @@ class AppContainer extends HTMLElement {
     }
     render() {
         if (this.shadowRoot) {
-            this.shadowRoot.innerHTML = ``;
-            this.counters.forEach((counter) => {
+            this.shadowRoot.innerHTML = `
+            <link rel="stylesheet" href="./app/PostInsta/post.css"> 
+            <my-post/>
+            `;
+            this.post.forEach((post) => {
                 var _a;
-                (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(counter);
-            });
-            this.profiles.forEach((profile) => {
-                var _a;
-                (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(profile);
+                (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(post);
             });
         }
     }

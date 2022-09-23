@@ -1,2 +1,2 @@
 import "./Counter/Counter.js";
-import "./Navegation/Navegation.js";
+import "./PostInsta/PostInsta.js";

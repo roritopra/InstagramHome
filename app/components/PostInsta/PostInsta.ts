@@ -9,7 +9,7 @@ export enum Attribute {
     "viewers" = "viewers"
 }
 
-class MyNavegation extends HTMLElement{
+class MyPost extends HTMLElement{
     nameprofile?: string;
     likeImg?: string;
     profileImg?: string;
@@ -30,7 +30,7 @@ class MyNavegation extends HTMLElement{
             comments: null,
             viewers: null
         };
-        return Object.keys(attrs); // return ["age","lastname","name"]
+        return Object.keys(attrs); 
     }
 
     constructor(){
@@ -75,5 +75,5 @@ class MyNavegation extends HTMLElement{
 
 }
 
-customElements.define("my-navegation", MyNavegation);
-export default MyNavegation;
+customElements.define("my-post", MyPost);
+export default MyPost;

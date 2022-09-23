@@ -13,7 +13,7 @@ class MyCounter extends HTMLElement{
     handleClick = () =>{
         this.count ++;
         this.render();
-    }
+    };
 
     connectedCallback(){
         this.render();
