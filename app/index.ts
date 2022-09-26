@@ -6,7 +6,6 @@ import MyMenu, {Attribute2} from "./components/Menu/Menu.js";
 
 
 
-
 class AppContainer extends HTMLElement{
     post: MyPost[] = [];
     Menuser: MyMenu[] = [];
@@ -30,7 +29,7 @@ class AppContainer extends HTMLElement{
         });
 
         data2.forEach((Menuser)=>{
-            const menuCard = this.ownerDocument.createElement("my-post") as MyMenu;
+            const menuCard = this.ownerDocument.createElement("my-menu") as MyMenu;
             menuCard.setAttribute(Attribute2.addImg, Menuser.addImg);
             menuCard.setAttribute(Attribute2.sendMenuImg, Menuser.sendMenuImg);
             menuCard.setAttribute(Attribute2.exploreImg, Menuser.exploreImg);
