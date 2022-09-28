@@ -57,6 +57,7 @@ class MyPost extends HTMLElement {
                     <img src=${this.saveimg} height = "40np"></img>
 
                 </div>
+                <p>Milan spam get ready 🖤</p>
                 <p><strong>${this.viewers} views</strong></p>
                 <p><strong>Watch the ${this.comments} comments</strong></p>
             </section>
