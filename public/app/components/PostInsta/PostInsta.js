@@ -6,6 +6,7 @@ export var Attribute;
     Attribute["kimimg"] = "kimimg";
     Attribute["commentimg"] = "commentimg";
     Attribute["sendimg"] = "sendimg";
+    Attribute["saveimg"] = "saveimg";
     Attribute["comments"] = "comments";
     Attribute["viewers"] = "viewers";
 })(Attribute || (Attribute = {}));
@@ -22,6 +23,7 @@ class MyPost extends HTMLElement {
             kimimg: null,
             commentimg: null,
             sendimg: null,
+            saveimg: null,
             comments: null,
             viewers: null
         };
@@ -52,9 +54,11 @@ class MyPost extends HTMLElement {
                     <img src=${this.likeimg} height = "40np"></img>
                     <img src=${this.commentimg} height = "40np"></img>
                     <img src=${this.sendimg} height = "40np"></img>
+                    <img src=${this.saveimg} height = "40np"></img>
+
                 </div>
                 <p><strong>${this.viewers} views</strong></p>
-                <p><strong>Ver los ${this.comments} comentarios</strong></p>
+                <p><strong>Watch the ${this.comments} comments</strong></p>
             </section>
             `;
         }

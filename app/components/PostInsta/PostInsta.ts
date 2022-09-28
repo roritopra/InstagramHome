@@ -5,8 +5,10 @@ export enum Attribute {
     "kimimg" = "kimimg",
     "commentimg" = "commentimg",
     "sendimg" = "sendimg",
+    "saveimg" = "saveimg"
     "comments" = "comments",
     "viewers" = "viewers"
+    
 }
 
 class MyPost extends HTMLElement{
@@ -16,6 +18,7 @@ class MyPost extends HTMLElement{
     kimimg?: string;
     commentimg?: string;
     sendimg?: string;
+    saveimg?: string
     comments?: number;
     viewers?: number;
 
@@ -27,6 +30,7 @@ class MyPost extends HTMLElement{
             kimimg: null,
             commentimg: null,
             sendimg: null,
+            saveimg: null,
             comments: null,
             viewers: null
         };
@@ -69,9 +73,11 @@ class MyPost extends HTMLElement{
                     <img src=${this.likeimg} height = "40np"></img>
                     <img src=${this.commentimg} height = "40np"></img>
                     <img src=${this.sendimg} height = "40np"></img>
+                    <img src=${this.saveimg} height = "40np"></img>
+
                 </div>
                 <p><strong>${this.viewers} views</strong></p>
-                <p><strong>Ver los ${this.comments} comentarios</strong></p>
+                <p><strong>Watch the ${this.comments} comments</strong></p>
             </section>
             `;
         }

@@ -21,6 +21,7 @@ class AppContainer extends HTMLElement{
             postCard.setAttribute(Attribute.kimimg, user.kimimg);
             postCard.setAttribute(Attribute.commentimg, user.commentimg);
             postCard.setAttribute(Attribute.sendimg, user.sendimg);
+            postCard.setAttribute(Attribute.saveimg, user.saveimg);
             postCard.setAttribute(Attribute.comments, user.comments);
             postCard.setAttribute(Attribute.viewers, user.viewers);
 
