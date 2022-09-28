@@ -12,24 +12,24 @@ class AppContainer extends HTMLElement {
         data.forEach((user) => {
             const postCard = this.ownerDocument.createElement("my-post");
             postCard.setAttribute(Attribute.nameprofile, user.nameprofile);
-            postCard.setAttribute(Attribute.likeImg, user.likeImg);
-            postCard.setAttribute(Attribute.profileImg, user.profileImg);
-            postCard.setAttribute(Attribute.kimImg, user.kimImg);
-            postCard.setAttribute(Attribute.commentImg, user.commentImg);
-            postCard.setAttribute(Attribute.sendImg, user.sendImg);
+            postCard.setAttribute(Attribute.likeimg, user.likeimg);
+            postCard.setAttribute(Attribute.profileimg, user.profileimg);
+            postCard.setAttribute(Attribute.kimimg, user.kimimg);
+            postCard.setAttribute(Attribute.commentimg, user.commentimg);
+            postCard.setAttribute(Attribute.sendimg, user.sendimg);
             postCard.setAttribute(Attribute.comments, user.comments);
             postCard.setAttribute(Attribute.viewers, user.viewers);
             this.post.push(postCard);
         });
         data2.forEach((Menuser) => {
-            const menuCard = this.ownerDocument.createElement("my-post");
-            menuCard.setAttribute(Attribute2.addImg, Menuser.addImg);
-            menuCard.setAttribute(Attribute2.sendMenuImg, Menuser.sendMenuImg);
-            menuCard.setAttribute(Attribute2.exploreImg, Menuser.exploreImg);
-            menuCard.setAttribute(Attribute2.homeImg, Menuser.homeImg);
-            menuCard.setAttribute(Attribute2.likeMenuImg, Menuser.likeMenuImg);
-            menuCard.setAttribute(Attribute2.perfilMenuImg, Menuser.perfilMenuImg);
-            menuCard.setAttribute(Attribute2.instagramImg, Menuser.instagramImg);
+            const menuCard = this.ownerDocument.createElement("my-menu");
+            menuCard.setAttribute(Attribute2.addimg, Menuser.addimg);
+            menuCard.setAttribute(Attribute2.sendmenuimg, Menuser.sendmenuimg);
+            menuCard.setAttribute(Attribute2.exploreimg, Menuser.exploreimg);
+            menuCard.setAttribute(Attribute2.homeimg, Menuser.homeimg);
+            menuCard.setAttribute(Attribute2.likemenuimg, Menuser.likemenuimg);
+            menuCard.setAttribute(Attribute2.perfilmenuimg, Menuser.perfilmenuimg);
+            menuCard.setAttribute(Attribute2.instagramimg, Menuser.instagramimg);
             this.Menuser.push(menuCard);
         });
     }
@@ -37,21 +37,22 @@ class AppContainer extends HTMLElement {
         this.render();
     }
     render() {
+        var _a;
         if (this.shadowRoot) {
             this.shadowRoot.innerHTML = `
-            <link rel="stylesheet" href="./app/PostInsta/post.css"> 
-            
-
-           
-            `;
-            this.post.forEach((post) => {
-                var _a;
-                (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(post);
-            });
-            this.post.forEach((Menuser) => {
+            <link rel="stylesheet" href="./app/style.css"> `;
+            const contentContainer = document.createElement("div");
+            contentContainer.classList.add("content");
+            const postContainer = document.createElement("div");
+            this.Menuser.forEach((Menuser) => {
                 var _a;
                 (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(Menuser);
             });
+            this.post.forEach((post) => {
+                postContainer.appendChild(post);
+            });
+            contentContainer.appendChild(postContainer);
+            (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(contentContainer);
         }
     }
 }

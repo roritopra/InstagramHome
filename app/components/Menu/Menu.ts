@@ -1,32 +1,32 @@
 export enum Attribute2 {
-    "addImg" = "addImg",
-    "sendMenuImg" = "sendMenuImg",
-    "exploreImg" = "exploreImg",
-    "homeImg" = "homeImg",
-    "likeMenuImg" = "likeMenuImg",
-    "perfilMenuImg" = "perfilMenuImg",
-    "instagramImg" = "instagramImg"
+    "addimg" = "addimg",
+    "sendmenuimg" = "sendmenuimg",
+    "exploreimg" = "exploreimg",
+    "homeimg" = "homeimg",
+    "likemenuimg" = "likemenuimg",
+    "perfilmenuimg" = "perfilmenuimg",
+    "instagramimg" = "instagramimg"
    
 }
 
 class MyMenu extends HTMLElement{
-    addImg?: string;
-    sendMenuImg?: string;
-    exploreImg?: string;
-    homeImg?: string;
-    likeMenuImg?: string;
-    perfilMenuImg?: string;
-    instagramImg?: string;
+    addimg?: string;
+    sendmenuimg?: string;
+    exploreimg?: string;
+    homeimg?: string;
+    likemenuimg?: string;
+    perfilmenuimg?: string;
+    instagramimg?: string;
 
     static get observedAttributes(){
         const attrs: Record<Attribute2,null> = {
-            addImg: null,
-            sendMenuImg: null,
-            exploreImg: null,
-            homeImg: null,
-            likeMenuImg: null,
-            perfilMenuImg: null,
-            instagramImg: null,
+            addimg: null,
+            sendmenuimg: null,
+            exploreimg: null,
+            homeimg: null,
+            likemenuimg: null,
+            perfilmenuimg: null,
+            instagramimg: null,
         };
         return Object.keys(attrs); 
     }
@@ -53,16 +53,20 @@ class MyMenu extends HTMLElement{
     render(){
         if(this.shadowRoot){
             this.shadowRoot.innerHTML = `
+            <link rel="stylesheet" href="./app/components/Menu/menu.css"> 
             <section>
-           
-            <img src=${this.instagramImg} height = "50np"></img>
-            <img src=${this.homeImg} height = "50np"></img>
-            <img src=${this.sendMenuImg} height = "50np"></img>
-            <img src=${this.addImg} height = "50np"></img>
-            <img src=${this.exploreImg} height = "50np"></img>
-            <img src=${this.likeMenuImg} height = "50np"></img>
-            <img src=${this.perfilMenuImg} height = "50np"></img>
+                <header>          
+                    <img src=${this.instagramimg} height = "50np"></img>
 
+                    <div>
+                        <img src=${this.homeimg} height = "50np"></img>
+                        <img src=${this.sendmenuimg} height = "50np"></img>
+                        <img src=${this.addimg} height = "50np"></img>
+                        <img src=${this.exploreimg} height = "50np"></img>
+                        <img src=${this.likemenuimg} height = "50np"></img>
+                        <img src=${this.perfilmenuimg} height = "50np"></img>
+                    </div>
+                </header>
             </section>
             `;
         }

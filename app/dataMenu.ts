@@ -1,12 +1,12 @@
 interface dataMenu {
     id: number;
-      addImg: string;
-      sendMenuImg: string;
-      exploreImg: string;
-      homeImg: string;
-      likeMenuImg: string;
-      perfilMenuImg: string;
-      instagramImg: string;
+      addimg: string;
+      sendmenuimg: string;
+      exploreimg: string;
+      homeimg: string;
+      likemenuimg: string;
+      perfilmenuimg: string;
+      instagramimg: string;
       
     
   }
@@ -14,13 +14,13 @@ interface dataMenu {
   const data2: dataMenu[] = [
     {
       id: 1,
-      addImg: "../imagesMenu/add.png",
-      sendMenuImg: "../imagesMenu/sendMenu.png",
-      exploreImg: "../imagesMenu/explore.png",
-      homeImg: "../imagesMenu/home.png",
-      likeMenuImg: "../imagesMenu/likeMenu.png",
-      perfilMenuImg: "../imagesMenu/perfilMenu.png",
-      instagramImg: "../imagesMenu/instagram.png"
+      addimg: "../imagesMenu/add.png",
+      sendmenuimg: "../imagesMenu/sendMenu.png",
+      exploreimg: "../imagesMenu/explore.png",
+      homeimg: "../imagesMenu/home.png",
+      likemenuimg: "../imagesMenu/likeMenu.png",
+      perfilmenuimg: "../imagesMenu/perfilMenu.png",
+      instagramimg: "../imagesMenu/instagram.png"
      
       
     },

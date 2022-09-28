@@ -1,32 +1,32 @@
 export enum Attribute {
     "nameprofile" = "nameprofile",
-    "likeImg" = "likeImg",
-    "profileImg" = "profileImg",
-    "kimImg" = "kimImg",
-    "commentImg" = "commentImg",
-    "sendImg" = "sendImg",
+    "likeimg" = "likeimg",
+    "profileimg" = "profileimg",
+    "kimimg" = "kimimg",
+    "commentimg" = "commentimg",
+    "sendimg" = "sendimg",
     "comments" = "comments",
     "viewers" = "viewers"
 }
 
 class MyPost extends HTMLElement{
     nameprofile?: string;
-    likeImg?: string;
-    profileImg?: string;
-    kimImg?: string;
-    commentImg?: string;
-    sendImg?: string;
-    comments?: string;
-    viewers?: string;
+    likeimg?: string;
+    profileimg?: string;
+    kimimg?: string;
+    commentimg?: string;
+    sendimg?: string;
+    comments?: number;
+    viewers?: number;
 
     static get observedAttributes(){
         const attrs: Record<Attribute,null> = {
             nameprofile: null,
-            likeImg: null,
-            profileImg: null,
-            kimImg: null,
-            commentImg: null,
-            sendImg: null,
+            likeimg: null,
+            profileimg: null,
+            kimimg: null,
+            commentimg: null,
+            sendimg: null,
             comments: null,
             viewers: null
         };
@@ -47,27 +47,31 @@ class MyPost extends HTMLElement{
         oldValue: string | undefined,
         newValue: string | undefined,
         ){
-           
-            this[propName] = newValue;
+            this[propName] = newValue as any;
             this.render();
     }
 
-    render(){
+    render(){        
         if(this.shadowRoot){
             this.shadowRoot.innerHTML = `
+            <link rel="stylesheet" href="./app/components/PostInsta/post.css">
             <section>
-            <img src=${this.profileImg} height = "50np"></img>
-            <h2>${this.nameprofile}</h2>
-            <p>sponsored</p>
-            <img src=${this.kimImg} height = "500np"></img>
-            <p> </p>
-            <img src=${this.likeImg} height = "40np"></img>
-            <img src=${this.commentImg} height = "40np"></img>
-            <img src=${this.sendImg} height = "40np"></img>
-            <p> </p>
-            <span><strong>${this.viewers}</strong></span>
-            <p> </p>
-            <span><strong>${this.comments}</strong></span>
+                <div class="post-header">
+                    <img src=${this.profileimg} height = "50np"></img>
+                    <div>
+                        <h2 class="username">${this.nameprofile}</h2>
+                        <p class="sponsored-text">sponsored</p>
+                    </div>
+                </div>
+                <img src=${this.kimimg} height = "500np"></img>
+
+                <div class="tools">
+                    <img src=${this.likeimg} height = "40np"></img>
+                    <img src=${this.commentimg} height = "40np"></img>
+                    <img src=${this.sendimg} height = "40np"></img>
+                </div>
+                <p><strong>${this.viewers} views</strong></p>
+                <p><strong>Ver los ${this.comments} comentarios</strong></p>
             </section>
             `;
         }

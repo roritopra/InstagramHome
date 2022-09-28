@@ -1,13 +1,13 @@
 interface dataPost {
   id: number;
   nameprofile: string;
-    likeImg: string;
-    profileImg: string;
-    kimImg: string;
-    commentImg: string;
-    sendImg: string;
-    comments: string;
-    viewers: string;
+    likeimg: string;
+    profileimg: string;
+    kimimg: string;
+    commentimg: string;
+    sendimg: string;
+    comments: number;
+    viewers: number;
   
 }
 
@@ -15,14 +15,13 @@ const data: dataPost[] = [
   {
     id: 1,
     nameprofile: "Kim Kardashian",
-    likeImg: "../imagesPost/likes.jpg",
-    profileImg: "../imagesPost/perfil.jpg",
-    kimImg: "../imagesPost/kim.jpg",
-    commentImg: "../imagesPost/comment.jpg",
-    sendImg: "../imagesPost/send.jpg",
-    comments: "29.658 comments",
-    viewers: "1.094.576 views"
-    
+    likeimg: "../imagesPost/likes.png",
+    profileimg: "../imagesPost/perfil.png",
+    kimimg: "../imagesPost/kim.jpg",
+    commentimg: "../imagesPost/comment.png",
+    sendimg: "../imagesPost/send.png",
+    comments: 29658,
+    viewers: 1094576
   },
 ];
 

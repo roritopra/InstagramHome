@@ -1,0 +1,9 @@
+body {
+    margin: 0;
+}
+
+.content {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
