@@ -1,13 +1,16 @@
 import "./components/index.js";
 import data from "./dataPost.js";
 import data2 from "./dataMenu.js";
+import data3 from "./dataHistory.js";
 import { Attribute } from "./components/PostInsta/PostInsta.js";
 import { Attribute2 } from "./components/Menu/Menu.js";
+import { Attribute3 } from "./components/Hystory/History.js";
 class AppContainer extends HTMLElement {
     constructor() {
         super();
         this.post = [];
-        this.Menuser = [];
+        this.menuUser = [];
+        this.historyUser = [];
         this.attachShadow({ mode: "open" });
         data.forEach((user) => {
             const postCard = this.ownerDocument.createElement("my-post");
@@ -22,16 +25,22 @@ class AppContainer extends HTMLElement {
             postCard.setAttribute(Attribute.viewers, user.viewers);
             this.post.push(postCard);
         });
-        data2.forEach((Menuser) => {
+        data2.forEach((menuUser) => {
             const menuCard = this.ownerDocument.createElement("my-menu");
-            menuCard.setAttribute(Attribute2.addimg, Menuser.addimg);
-            menuCard.setAttribute(Attribute2.sendmenuimg, Menuser.sendmenuimg);
-            menuCard.setAttribute(Attribute2.exploreimg, Menuser.exploreimg);
-            menuCard.setAttribute(Attribute2.homeimg, Menuser.homeimg);
-            menuCard.setAttribute(Attribute2.likemenuimg, Menuser.likemenuimg);
-            menuCard.setAttribute(Attribute2.perfilmenuimg, Menuser.perfilmenuimg);
-            menuCard.setAttribute(Attribute2.instagramimg, Menuser.instagramimg);
-            this.Menuser.push(menuCard);
+            menuCard.setAttribute(Attribute2.addimg, menuUser.addimg);
+            menuCard.setAttribute(Attribute2.sendmenuimg, menuUser.sendmenuimg);
+            menuCard.setAttribute(Attribute2.exploreimg, menuUser.exploreimg);
+            menuCard.setAttribute(Attribute2.homeimg, menuUser.homeimg);
+            menuCard.setAttribute(Attribute2.likemenuimg, menuUser.likemenuimg);
+            menuCard.setAttribute(Attribute2.perfilmenuimg, menuUser.perfilmenuimg);
+            menuCard.setAttribute(Attribute2.instagramimg, menuUser.instagramimg);
+            this.menuUser.push(menuCard);
+        });
+        data3.forEach((historyUser) => {
+            const historyCard = this.ownerDocument.createElement("my-history");
+            historyCard.setAttribute(Attribute3.userhistory, historyUser.userhistory);
+            historyCard.setAttribute(Attribute3.imagehistory, historyUser.imagehistory);
+            this.historyUser.push(historyCard);
         });
     }
     connectedCallback() {
@@ -45,9 +54,13 @@ class AppContainer extends HTMLElement {
             const contentContainer = document.createElement("div");
             contentContainer.classList.add("content");
             const postContainer = document.createElement("div");
-            this.Menuser.forEach((Menuser) => {
+            this.menuUser.forEach((menuUser) => {
                 var _a;
-                (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(Menuser);
+                (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(menuUser);
+            });
+            this.historyUser.forEach((historyUser) => {
+                var _a;
+                (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(historyUser);
             });
             this.post.forEach((post) => {
                 postContainer.appendChild(post);
