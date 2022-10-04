@@ -57,6 +57,7 @@ class MyMenu extends HTMLElement{
             <section>
                 <header>          
                     <img src=${this.instagramimg} height = "50np"></img>
+                    <input type="text" placeholder="Buscar">
 
                     <div>
                         <img src=${this.homeimg} height = "50np"></img>

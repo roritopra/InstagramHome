@@ -47,26 +47,28 @@ class AppContainer extends HTMLElement {
         this.render();
     }
     render() {
-        var _a;
+        var _a, _b;
         if (this.shadowRoot) {
             this.shadowRoot.innerHTML = `
             <link rel="stylesheet" href="./app/style.css"> `;
             const contentContainer = document.createElement("div");
             contentContainer.classList.add("content");
             const postContainer = document.createElement("div");
+            const historyContainer = document.createElement("div");
+            historyContainer.classList.add("content-history");
             this.menuUser.forEach((menuUser) => {
                 var _a;
                 (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(menuUser);
             });
             this.historyUser.forEach((historyUser) => {
-                var _a;
-                (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(historyUser);
+                historyContainer === null || historyContainer === void 0 ? void 0 : historyContainer.appendChild(historyUser);
             });
+            (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(historyContainer);
             this.post.forEach((post) => {
                 postContainer.appendChild(post);
             });
             contentContainer.appendChild(postContainer);
-            (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(contentContainer);
+            (_b = this.shadowRoot) === null || _b === void 0 ? void 0 : _b.appendChild(contentContainer);
         }
     }
 }

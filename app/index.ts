@@ -67,15 +67,18 @@ class AppContainer extends HTMLElement{
             const contentContainer = document.createElement("div");
             contentContainer.classList.add("content");
             const postContainer = document.createElement("div");
+            const historyContainer = document.createElement("div");
+            historyContainer.classList.add("content-history");
 
             this.menuUser.forEach((menuUser)=>{
                 this.shadowRoot?.appendChild(menuUser);    
             });
 
             this.historyUser.forEach((historyUser)=>{
-                this.shadowRoot?.appendChild(historyUser);    
+                historyContainer?.appendChild(historyUser);    
             });
 
+            this.shadowRoot?.appendChild(historyContainer);
             
             this.post.forEach((post)=>{
                 postContainer.appendChild(post);

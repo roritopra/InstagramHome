@@ -40,11 +40,12 @@ class MyHistory extends HTMLElement{
     render(){
         if(this.shadowRoot){
             this.shadowRoot.innerHTML = `
-            <link rel="stylesheet" href="./app/components/Menu/menu.css"> 
-            <section class = "history">
+            <link rel="stylesheet" href="./app/components/Hystory/history.css"> 
+            <section>
+            <div class="historyy">
                 <img class = "imagen" src = ${this.imagehistory}></img> 
                 <h2 class = "username">${this.userhistory}</h2>
-
+            </div>    
             </section>
             `;
         }
